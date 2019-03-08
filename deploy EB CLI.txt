@@ -1,0 +1,10 @@
+sudo apt-get install python-pip
+sudo apt-get install python3-pip
+
+pip install awscli
+pip install awsebcli --upgrade --user
+export PATH=~/.local/bin:$PATH
+
+eb init
+
+eb deploy

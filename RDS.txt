@@ -1,0 +1,23 @@
+
+export database mysql
+---------------------
+sudo mysql -u devopscilsy -p dbsosmed > dbsosmed.sql
+
+remote RDS AWS
+--------------
+sudo mysql -h ahmad-mysql5723.cmeypdk92ow4.us-west-2.rds.amazonaws.com -u root -p
+
+input password
+
+show databases;
+
+
+import databases
+----------------
+
+sudo mysql -h ahmad-mysql5723.cmeypdk92ow4.us-west-2.rds.amazonaws.com -u root -p dbsosmed < dump.sql
+
+
+rubah settingan config.php
+--------------------------
+sudo nano config.php

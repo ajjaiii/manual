@@ -1,0 +1,41 @@
+sudo mysql -u root -p
+
+create user 'devopscilsy'@'localhost' identified by '1234567890';
+
+grant all privileges on *.* to 'devopscilsy'@'localhost';
+
+\q.
+
+
+sudo mysql -u devopscilsy -p
+
+create database dbsosmed;
+
+show databases;
+
+SELECT User FROM mysql.user;
+
+\q.
+
+cd /var/www/html
+sudo mysql -u devopscilsy -p dbsosmed < dump.sql
+
+
+
+GIT
+=========
+
+git init .
+git status
+git add .
+git commit -m 'commit pertama'
+
+
+git remote add project1 git@github.com:ajjaiii/project1.git
+git remote rm project1
+
+git add .
+git commit -m "commit push"
+git push project1 master
+
+
