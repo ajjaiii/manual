@@ -1,4 +1,4 @@
-apt­get update
+aptÂ­get update
 
 sudo apt-get install automake autotools-dev fuse g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
 
@@ -10,8 +10,6 @@ make
 sudo make install
 
 vim /etc/passwd-s3fs
-
-AKIAJ22XSMM5OOAG2BVA:iRL3SpNH+wk1cLK3CEg3e8CbmzTMncsnHXYiNz/3
 
 sudo chmod 640 /etc/passwd-s3fs
 
