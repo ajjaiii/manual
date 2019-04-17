@@ -1,0 +1,103 @@
+
+Install kubectl :
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl     -------> install kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+install Kops :
+wget https://github.com/kubernetes/kops/releases/download/1.11.1/kops-linux-amd64  ---> install kops
+chmod +x kops-linux-amd64
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+==============================================
+Install AWS CLI :
+
+apt update
+apt install awscli
+apt-get install python-pip
+apt-get install python3-pip
+pip install awscli --upgrade --user
+pip3 install awscli --upgrade --user
+aws --version
+aws configure
+==============================================
+==============================================
+Buat Bucket S3 via Aws CLI :
+
+cd /root/.aws/
+nano config
+
+region=us-west-2    ----> ganti region
+
+aws s3 mb s3://ahmad.sdcilsy-tango
+==================================================
+==================================================
+Export environment S3 :
+
+echo "export KOPS_STATE_STORE=s3://ahmad.sdcilsy-tango" >> $HOME/.bashrc    ---> expose environment
+
+sudo cp /etc/kubernetes/admin.conf $HOME
+sudo chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
+
+sudo -i
+swapoff -a # this disables swap immediately
+exit
+strace -eopenat kubectl get nodes
+
+echo "export KUBECONFIG=$HOME/admin.conf" >> $HOME/.bashrc
+
+=============================================================
+Create Cluster :
+
+ssh-keygen -t rsa      ----> buat SSH
+
+kops create cluster --node-count=1 --node-size=t2.medium --master-size=t2.medium --zones=us-west-2a --name sdcilsy-tango.web.id   ----> buat cluster dengan lebih spesifik
+
+kops update cluster ahmad.sdcilsy-tango.web.id --yes        -----> update cluster
+
+kops validate cluster
+  
+============================================================================================================================================
+kops delete cluster useast1.dev.example.com --yes     ---> delete cluster
+
+sudo nano /etc/hosts 
+
+52.11.136.0 api.kubernets.coba.sdcilsy-tango.web.id     ---> tambahan di localhost
+
+kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+
+===========================================================================================================================
+
+https://50.112.187.81/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+
+export PATH=$PATH:~/.local/bin
+
+=============================================================================================================================
+kops get secrets kube --type secret -oplaintext   ---> melihat password login dashboard
+
+kops get secrets admin --type secret -oplaintext  ---> melihat token login
+
+==============================================
+kubectl -n kube-system get svc -o wide     ----> melihat cluster
+
+kubectl -n kube-system describe pod <whatever the dashboard pod is>
+
+kubectl get nodes
+
+kubectl describe node ip-172-20-57-184.us-west-2.compute.internal
+
+kubectl get pods -n kube-system
+
+kubectl logs kubernetes-dashboard-3543765157-4ftml -n kube-system
+
+kubectl --namespace=kube-system get all
+
+kubectl cluster-info
+
+kubectl get svc
+
+====================================================================
+netstat -tulp | grep kubectl
+sudo kill -9 <pid>
