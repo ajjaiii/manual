@@ -1,0 +1,72 @@
+jawaban="y"
+read -p "Apakah kamu yakin akan menghapus aplikasi apache ? (Y/N)" pilih;
+
+if [ $pilih == $jawaban ];
+then
+        echo "Menghentikan layanan apache"
+        echo "========================================"
+        sudo service apache2 stop
+        echo "========================================"
+        echo "Menghapus file-file yang terhubung ke apache"
+        echo "========================================"
+        sudo apt-get purge -y apache2*
+        sudo apt-get autoremove -y
+        echo "========================================"
+        echo "menghapus folder apache"
+        sudo rm -rf /etc/apache2
+        echo "==============================================="
+        echo "Selesai ! apache sudah dihapus dari sistem anda"
+        echo "==============================================="
+else
+        echo "Penghapusan dibatalkan"
+        exit 1
+fi
+
+#==================================== Uninstall PHP =========================================
+jawaban1="y"
+read -p "Apakah kamu yakin akan menghapus aplikasi php  ? (Y/N)" pilih;
+if [ $pilih == $jawaban1 ];
+then
+        echo "Proses penghapusan PHP"
+        echo "========================================"
+        sudo apt-get remove -purge -y php*
+        sudo apt-get purge -y  php*
+        sudo apt-get autoremove -y
+        sudo apt-get autoclean -y
+        echo "========================================"
+        echo "Menghapus Folder PHP"
+        echo "========================================"
+        sudo rm -rf /etc/php
+        echo "============================================="
+        echo "Selesai ! PHP sudah dihapus dari sistem anda "
+        echo "============================================="
+else
+        echo "Penghapusan dibatalkan"
+        exit 1
+fi
+
+
+#========================== Uninstall Mysql ============================
+
+jawaban2="y"
+read -p "Apakah kamu yakin akan menghapus Database Mysql  ? (Y/N)" pilih;
+if [ $pilih == $jawaban2 ];
+then
+        echo "Proses penghapusan Mysql"
+        echo "========================================"
+        sudo apt-get remove -purge -y mysql*
+        sudo apt-get purge -y  mysql*
+        sudo apt-get autoremove -y
+        sudo apt-get autoclean -y
+        echo "========================================"
+        echo "Menghapus Folder Mysql"
+        echo "========================================"
+        sudo rm -rf /etc/mysql
+        echo "=============================================="
+        echo "Selesai ! Mysql sudah dihapus dari sistem anda"
+        echo "=============================================="
+        exit 0
+else
+        echo "Penghapusan dibatalkan"
+        exit 1
+fi
