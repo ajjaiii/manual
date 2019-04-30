@@ -16,3 +16,20 @@ sudo yum install jenkins
 service jenkins start
 service jenkins status
 service jenkins reload
+
+===================================================
+jenkins on ECS
+ls
+docker build . -t  pesbuk
+docker tag pesbuk  081602682094.dkr.ecr.us-west-2.amazonaws.com/ahmad-fb:$BUILD_NUMBER
+docker push  081602682094.dkr.ecr.us-west-2.amazonaws.com/ahmad-fb:$BUILD_NUMBER
+docker rm -f pesbuk
+docker run -d -p 80:80 --name pesbuk 081602682094.dkr.ecr.us-west-2.amazonaws.com/ahmad-fb:$BUILD_NUMBER
+
+
+
+aws ecs register-task-definition --family ahmad-sosmed --cli-input-json file://ecs-v2.json > ecs-output-v2.json
+export TASK_ARN=$(jq -r '.taskDefinition.taskDefinitionArn' ecs-output-v2.json)
+export FAMILY=$(jq -r '.taskDefinition.family' ecs-output-v2.json)
+export REVISION=$(jq -r '.taskDefinition.revision' ecs-output-v2.json)
+aws ecs update-service --cluster ahmad-testing --service fesbuk --task-definition $FAMILY:$REVISION
