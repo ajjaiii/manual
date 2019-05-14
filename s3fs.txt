@@ -16,19 +16,16 @@ sudo chmod 640 /etc/passwd-s3fs
 mkdir -p /tmp/cache
 mkdir -p /var/www/html/s3ahmad
 
-chmod 777 /var/www/html/s3ahmad /tmp/cachechmod
-
-s3fs -o allow_other -o use_cache=/tmp/cache ahmadaryadi /var/www/html/s3ahmad
-
+chmod 777 /var/www/html/s3ahmad /tmp/cache
+s3fs -o allow_other -o use_cache=/tmp/cache ahmadaryadi /var/www/html/
 crontab -e
 
-@reboot s3fs -o allow_other -o use_cache=/tmp/cache ahmadaryadi /var/www/html/s3ahmad
+@reboot s3fs -o allow_other -o use_cache=/tmp/cache ahmadaryadi /var/www/html
 
 
 cp -Rf /var/www/html/* /mnt/s3ahmad/webpesbuk
 
-fusermount -uz /mnt/s3-bucket-andykamto
-
+fusermount -uz /var/www/html
 cd
 
 sudo nano /etc/apache2/sites-available/000-default.conf
