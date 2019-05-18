@@ -30,6 +30,7 @@ aws s3 mb s3://ahmad.sdcilsy-tango
 export PATH=$PATH:~/.local/bin
 
 echo "export KOPS_STATE_STORE=s3://ahmad.sdcilsy-tango" >> $HOME/.bashrc    ---> expose environment
+source .bashrc         ----> reload .bashrc
 
 sudo cp /etc/kubernetes/admin.conf $HOME
 sudo chown $(id -u):$(id -g) $HOME/admin.conf
