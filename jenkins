@@ -5,6 +5,9 @@ sudo apt install openjdk-8-jdk -y
 sudo apt install jenkins -y
 systemctl status jenkins
 
+compgen -u  ----> show all users
+compgen -g  ----> show all grup
+
 sudo usermod -aG docker jenkins
 =======================================
 install jenkins centos
