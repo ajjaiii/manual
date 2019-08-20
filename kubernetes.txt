@@ -65,6 +65,8 @@ sudo nano /etc/hosts
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 
 ===========================================================================================================================
+kubectl proxy &
+
 url untuk dashboard kubernetes :
 
 https://18.236.116.81/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
