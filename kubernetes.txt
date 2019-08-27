@@ -93,6 +93,9 @@ kubectl get pvc   ---> melihat persistent volume claim
 kubectl delete pvc wordpress   ---> menghapus persisten-volume-claim wordpress
 kubectl api-versions  ---> untuk melihat versi api
 kubectl get deployments --all-namespaces    ---> melihat deployment
+kubectl edit services kubernetes-dashboard -n kube-system    ----> edit service
+kubectl get svc kubernetes-dashboard -n kube-system --export -o yaml   ---> lihat file yaml service
+
 ====================================================================
 cek port proxy :
 
