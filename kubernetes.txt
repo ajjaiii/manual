@@ -95,6 +95,8 @@ kubectl api-versions  ---> untuk melihat versi api
 kubectl get deployments --all-namespaces    ---> melihat deployment
 kubectl edit services kubernetes-dashboard -n kube-system    ----> edit service
 kubectl get svc kubernetes-dashboard -n kube-system --export -o yaml   ---> lihat file yaml service
+kubectl -n kube-system get secret ---> melihat list token
+kubectl -n kube-system describe secret kubernetes-dashboard-token-g9tjd --> melihat isi token
 
 ====================================================================
 cek port proxy :
