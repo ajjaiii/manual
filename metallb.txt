@@ -15,4 +15,4 @@ data:
     - name: my-ip-space
       protocol: layer2
       addresses:
-      - 192.168.1.240/28
+      - 192.168.205.20-192.168.205.100
