@@ -32,5 +32,8 @@ helm init --service-account tiller
 helm init --upgrade --service-account tiller
 
 jika error pada helm :
-$ export HELM_HOST=":44134"
+
+$ echo export HELM_HOST=":44134" >> .bashrc
+
+crontab -e
 $ tiller -listen ${HELM_HOST} -alsologtostderr >/dev/null 2>&1 &
