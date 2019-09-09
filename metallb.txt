@@ -1,7 +1,7 @@
-
-
 kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.8.1/manifests/metallb.yaml
 
+
+nano cmmetallb.yaml
 configmap untuk metallb:
 ----------------------------------------------------------
 apiVersion: v1
