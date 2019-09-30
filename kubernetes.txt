@@ -5,6 +5,9 @@ sudo mv kubectl /usr/local/bin/kubectl
 wget https://github.com/kubernetes/kops/releases/download/1.11.1/kops-linux-amd64  ---> install kops
 chmod +x kops-linux-amd64
 mv kops-linux-amd64 /usr/local/bin/kops
+==============================================
+pakai minikube :
+minikube start --kubernetes-version=v1.15.3 --memory=6144 --cpus=2 --disk-size=25g
 
 ==============================================
 apt update
