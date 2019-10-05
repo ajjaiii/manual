@@ -23,5 +23,5 @@ kubeadm init --apiserver-advertise-address=172.11.11.128 --pod-network-cidr=10.2
 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
-sudo kubeadm join 172.11.11.128:6443 --token yy7828.ruh0r82a7xpc8dx1 \
+sudo kubeadm join  --token yy7828.ruh0r82a7xpc8dx1 \
     --discovery-token-ca-cert-hash sha256:604347eb9824285c08f877e814bd083aab06765e473f75855e06b732ec18cbda
