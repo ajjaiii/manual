@@ -21,7 +21,7 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 
 dpgk -l | grep kube
 
-kubeadm init --apiserver-advertise-address=172.11.11.128 --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.15.3
+sudo kubeadm init --apiserver-advertise-address=172.11.11.128 --pod-network-cidr=10.244.0.0/16 --kubernetes-version=v1.15.3
 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
