@@ -1,4 +1,4 @@
-untuk hidupkan NIC di linux
+untuk hidupkan NIC 
 
 sudo apt install ifupdown
 sudo vi /etc/network/interfaces
