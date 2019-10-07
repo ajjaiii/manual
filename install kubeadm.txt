@@ -28,6 +28,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 sudo kubeadm join  --token yy7828.ruh0r82a7xpc8dx1 \
     --discovery-token-ca-cert-hash sha256:604347eb9824285c08f877e814bd083aab06765e473f75855e06b732ec18cbda
 
+kubectl label worker1 node-role.kubernetes.io/worker1=
 
 crontab -e
 @reboot sudo swapoff -a
