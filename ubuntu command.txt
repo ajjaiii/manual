@@ -15,3 +15,7 @@ untuk ubah hostname
 sudo hostnamectl
 sudo hostnamectl set-hostname linuxize
 sudo vi /etc/hosts
+
+==============================================
+hapus docker image tidak terpakai
+docker images prune -a
