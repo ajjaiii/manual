@@ -1,13 +1,17 @@
+untuk hidupkan NIC di linux
+
+sudo apt install ifupdown
 sudo vi /etc/network/interfaces
 
 auto  eth0
 iface eth0 inet dhcp
 
 sudo systemctl restart networking
-
 sudo service networking restart
 
 =============================================
+untuk ubah hostname
+
 sudo hostnamectl
 sudo hostnamectl set-hostname linuxize
 sudo vi /etc/hosts
