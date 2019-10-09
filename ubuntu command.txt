@@ -16,6 +16,7 @@ gateway 192.168.0.1
 dns-nameservers 192.168.0.3
 -----------------------------------------
 ls /etc/netplan/
+sudo vi /etc/netplan/01-netcfg.yaml
 
 network:
   version: 2
