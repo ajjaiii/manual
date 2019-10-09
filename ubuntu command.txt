@@ -14,6 +14,10 @@ network 192.168.0.0
 broadcst 192.168.0.255
 gateway 192.168.0.1
 dns-nameservers 192.168.0.3
+
+
+sudo systemctl restart networking
+sudo service networking restart
 -----------------------------------------
 ls /etc/netplan/
 sudo vi /etc/netplan/01-netcfg.yaml
@@ -28,9 +32,11 @@ network:
      gateway4: 192.168.1.1
      nameservers:
        addresses: [8.8.8.8,8.8.4.4]
+ 
+ 
+ sudo netplan apply
 -------------------------------------
-sudo systemctl restart networking
-sudo service networking restart
+
 
 =============================================
 untuk ubah hostname
