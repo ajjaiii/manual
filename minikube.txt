@@ -1,0 +1,15 @@
+1. install virtualbox or KVM
+   https://www.virtualbox.org/wiki/Downloads
+   https://www.linux-kvm.org/page/Main_Page
+ 
+2. install minikube
+   https://github.com/kubernetes/minikube/releases
+   
+   curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube
+  
+  mv minikube /usr/local/bin/
+  
+3. minikube start --kubernetes-version=v1.15.3 --memory=8192 --cpus=4 --disk-size=30g
+
+4. eval $(minikube docker-env)   ---> agar docker didalam minikube bisa terlihat di Host
