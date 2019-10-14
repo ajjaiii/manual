@@ -10,6 +10,7 @@
   
   mv minikube /usr/local/bin/
   
+minikube config set vm-driver none  
 3. minikube start --kubernetes-version=v1.15.3 --memory=8192 --cpus=4 --disk-size=30g
 
 4. eval $(minikube docker-env)   ---> agar docker didalam minikube bisa terlihat di Host
