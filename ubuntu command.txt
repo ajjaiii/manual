@@ -48,3 +48,8 @@ sudo vi /etc/hosts
 ==============================================
 hapus docker image tidak terpakai
 docker image prune -a
+
+=====================================
+show list user
+less /etc/passwd
+awk -F: '{ print $1}' /etc/passwd
