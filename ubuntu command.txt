@@ -53,3 +53,12 @@ docker image prune -a
 show list user
 less /etc/passwd
 awk -F: '{ print $1}' /etc/passwd
+
+====================================
+install ssh
+sudo apt-get install openssh-server
+$ sudo systemctl enable ssh
+$ sudo systemctl start ssh
+
+ssh-keygen
+
