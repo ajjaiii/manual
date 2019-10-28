@@ -20,7 +20,7 @@ SELECT User FROM mysql.user;
 cd /var/www/html
 sudo mysql -u devopscilsy -p dbsosmed < dump.sql
 
-
+mysql -uroot -pmypassword -h127.0.0.1 -P6603 -e
 
 GIT
 =========
