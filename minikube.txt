@@ -19,3 +19,6 @@ minikube config set vm-driver none
 minikube addons list
 minikube addons enable dashboard
 minikube dashboard
+
+sudo minikube stop
+sudo minikube delete
