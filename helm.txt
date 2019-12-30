@@ -38,3 +38,10 @@ source .bashrc
 
 crontab -e
 @reboot tiller -listen ${HELM_HOST} -alsologtostderr >/dev/null 2>&1 &
+
+
+
+----------------------------------------
+command2x pada helm
+
+- helm inspect values stable/nginx-ingress > /tmp/nginx-ingress.values
