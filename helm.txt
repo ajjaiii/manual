@@ -45,3 +45,4 @@ crontab -e
 command2x pada helm
 
 - helm inspect values stable/nginx-ingress > /tmp/nginx-ingress.values
+- helm install stable/nginx-ingress --values /tmp/nginx-ingress.values --name ingress
