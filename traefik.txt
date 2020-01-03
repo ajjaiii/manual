@@ -1,2 +1,2 @@
 install via helm
-helm install stable/traefik --name traefik --set dashboard.enabled=true,dashboard.domain=traefik.ahmad.k8s,serviceType=NodePort,rbac.enabled=true  --namespace kube-system
+helm install stable/traefik --name traefik --set dashboard.enabled=true,dashboard.domain=traefik.ahmadaryadi.com,serviceType=LoadBalancer,rbac.enabled=true
