@@ -62,3 +62,6 @@ $ sudo systemctl start ssh
 
 ssh-keygen
 
+==========================
+mencari fie
+sudo find / -name apache2
