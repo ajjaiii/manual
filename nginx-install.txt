@@ -1,3 +1,5 @@
+## instalasi nginx dengan cara compile ##
+
 wget http://nginx.org/download/nginx-1.26.1.tar.gz
 tar -zxvf nginx-1.26.1.tar.gz
 cd nginx-1.26.1
@@ -9,3 +11,14 @@ yum install -y gcc-c++ pcre-devel zlib-devel make unzip openssl openssl-devel Ge
 make
 make install
 
+#konfigurasi file berada di
+/usr/local/nginx
+
+#menjalankan nginx
+/usr/local/nginx/sbin/nginx
+
+#mengecek konfigurasi nginx
+/usr/local/nginx/sbin/nginx -t
+
+#mereload nginx
+/usr/local/nginx/sbin/nginx -s reload
