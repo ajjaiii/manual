@@ -5,3 +5,5 @@ yum --disablerepo="*" --enablerepo="remi-safe" list php[7-9][0-9].x86_64
 yum install yum-utils
 sudo yum-config-manager --enable remi-php74
 sudo yum install php php-mysqlnd php-fpm
+systemctl start php-fpm
+systemctl status php-fpm
