@@ -1,4 +1,4 @@
-## instalasi nginx dengan cara compile ##
+##### instalasi nginx dengan cara compile #####
 
 wget http://nginx.org/download/nginx-1.26.1.tar.gz
 tar -zxvf nginx-1.26.1.tar.gz
