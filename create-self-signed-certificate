@@ -1,0 +1,16 @@
+openssl req -x509 -sha256 -days 3560 -nodes -newkey rsa:2048 -subj "/CN=AryadiCA/DC=aryadiapp1/DC=com" -keyout app1rootCA.key -out app1rootCA.crt
+
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -out server.csr
+
+vi cert.conf
+
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = aryadiapp1.com
+
+openssl x509 -req -in server.csr -CA app1rootCA.crt -CAkey app1rootCA.key -CAcreateserial -out server.crt -days 3650 -sha256 -extfile cert.conf
