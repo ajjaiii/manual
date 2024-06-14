@@ -1,5 +1,7 @@
 ##### instalasi nginx dengan cara compile #####
 
+mkdir -p /opt/package
+cd /opt/package
 wget http://nginx.org/download/nginx-1.26.1.tar.gz
 tar -zxvf nginx-1.26.1.tar.gz
 cd nginx-1.26.1
