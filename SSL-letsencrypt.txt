@@ -1,0 +1,14 @@
+#### install SSL Certificate with lest'encrypt ####
+
+1. yum install certbot
+2. mkdir -p /var/www/letsencrypt
+3. tambahkan config berikut di vhost:
+   vi /usr/local/nginx/conf.d/aryadi.trinix.id.conf
+   
+   location ^~ /.well-known/acme-challenge/ {
+            default_type "text/plain";
+            root /var/www/letsencrypt;
+        }
+
+4. certbot certonly --webroot --agree-tos --no-eff-email --email support@trinix.id -w /var/www/letsencrypt -d aryadi.trinix.id
+5. certificate berada didirectory /etc/letsencrypt/live/aryadi.trinix.id
